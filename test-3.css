@@ -1,167 +1,115 @@
-timeout = 1880s
+/*=== progressBar CSS By David Porras ===*/
 
-minsSize = 8rem
-secsSize = 6rem
-pretimeout = timeout - 1s
-minstens = (6000s - timeout + 599s) * -1
-tmod = timeout % 600
-minsones = (600s - tmod + 59s) * -1
-secstens = (60s - (tmod % 60) + 9s) * -1
-secsones = (10s - (tmod % 10)) * -1
+.progress {
+    background-color: rgb(229,233,235);
+    height: 1em;
+    position: relative;
+    width: 100%;
+}
+.progress-bar-red {
+    background-size: 23em 0.25em;
+    height: 100%;
+    position: relative;
+    background-color: #e04542;
+    animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -o-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -ms-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -webkit-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -moz-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+}
 
-body, html
-  margin 0
-  height 100%
-body
-  display flex
-  justify-content center
-  align-items center
-  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
-  margin 0
-  font-size 14px
-  background #f4f4f4
-a
-  text-decoration none
-.fr
-  display flex
-.fc
-  display flex
-  flex-direction column
-.timer-wrap
-  background url(http://img11.deviantart.net/ceef/i/2014/070/2/c/pastel_space_background___wallpaper___3_by_goldcat742-d71vlqr.jpg)
-  background-size cover
-  border 1.4rem solid white
-  padding 2rem
-  color white
-  width 486px
-  box-sizing border-box
-  margin 0 auto 1rem auto
-  .timer
-    padding 1rem
-    position relative
-    background #031722
-    box-shadow 0 0 1rem black
-    h2
-      margin 0
-      font-weight 600
-      font-size 1rem
-      color #C20D78
-      animation fadeout 2s pretimeout linear forwards
-    .view
-      margin .5rem 0 1rem 0
-      color inherit
-      animation fadeout 2s pretimeout linear forwards
-      span
-        background #C20D78
-        padding 0.3rem 1rem
-    .numbers
-      align-items flex-end
-      font-size 12px
-      animation fadeout 2s pretimeout linear forwards
-      .mins
-        font-size minsSize
-        line-height minsSize
-        height minsSize
-        overflow hidden
-        &.ones .numlist
-          animation minones-jaggy 600s cubic-bezier(0.990, 0.025, 0.970, -0.120) infinite
-          animation-delay minsones
-        &.tens .numlist
-          animation mintens-jaggy 6000s cubic-bezier(1, 0.001, 1, 0.001) forwards
-          animation-delay minstens
-      .secs
-        font-size secsSize
-        line-height secsSize
-        height secsSize
-        overflow hidden
-        &.ones .numlist
-          animation secones-jaggy 10s ease-in infinite
-          animation-delay secsones
-        &.tens .numlist
-          animation sectens-jaggy 60s cubic-bezier(0.990, 0.025, 0.970, -0.120) infinite
-          animation-delay secstens
-      .mins, .secs
-        background linear-gradient(top, #0C1A23,#152836,#0C1A23)
-        box-shadow inset 0 0 3px rgba(255,255,255,0.2)
-        margin-right 0.5rem
-      .seperator
-        font-size 3rem
-        line-height 6rem
-        margin-right 0.5rem
-    .callout
-      position absolute
-      top -1.6rem
-      right -1.6rem
-      background #C20D78
-      text-align center
-      border-radius 50%
-      height 10rem
-      width 10rem
-      display flex
-      flex-direction column
-      justify-content center
-      z-index 10
-      font-size 1rem
-      animation moveCallout 1s pretimeout forwards
-      .price
-        font-size 3.6em
-        display flex
-        justify-content center
-        align-content flex-start
-        span
-          font-size .6em
-          line-height 1.4
-      .sub
-        font-size .8em
-        span
-          font-size .6rem
-          line-height 1.4
-      .now, .price, .sub
-        animation shrinkFade 1s pretimeout forwards
-      .timeout
-        opacity 0
-        height 0
-        animation growFade .5s pretimeout forwards
-@keyframes secones-jaggy
-  for i in 0..10
-    {10% * i}
-      transform translateY(-6rem * i)
-    {(10% * i) + 8}
-      transform translateY(-6rem * i)
-@keyframes sectens-jaggy
-  for i in 0..6
-    {100% / 6 * i}
-      transform translateY(-6rem * i)
-    {(100% / 6 * i) + 9.99}
-      transform translateY(-6rem * i)
-@keyframes minones-jaggy
-  for i in 0..10
-    {10% * i}
-      transform translateY(-8rem * i)
-    {(10% * i) + 9}
-      transform translateY(-8rem * i)
-@keyframes mintens-jaggy
-  for i in 0..10
-    {100% / 10 * i}
-      transform translateY(-8rem * i)
-    {(100% / 10 * i) + 9.5}
-      transform translateY(-8rem * i)
-@keyframes fadeout
-  0%
-    opacity 1
-  100%
-    opacity 0
-@keyframes shrinkFade
-  100%
-    height 0
-    margin 0
-    opacity 0
-@keyframes growFade
-  100%
-    height auto
-    opacity 1
-@keyframes moveCallout
-  100%
-    top 50%
-    left 50%
-    transform translate(-50%, -50%)
+.progress-bar-blue {
+    background-size: 23em 0.25em;
+    height: 100%;
+    position: relative;
+    background-color: #337ab7;
+    animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -o-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -ms-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -webkit-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -moz-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+}
+
+.progress-bar-green {
+    background-size: 23em 0.25em;
+    height: 100%;
+    position: relative;
+    background-color: #3c763d;
+    animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -o-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -ms-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -webkit-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -moz-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+}
+
+.progress-bar-orange {
+    background-size: 23em 0.25em;
+    height: 100%;
+    position: relative;
+    background-color: #fb8836;
+    animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -o-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -ms-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -webkit-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+        -moz-animation: cssload-width 3.45s cubic-bezier(0.45, 0, 1, 1) infinite;
+}
+
+@keyframes cssload-width {
+    0%, 100% {
+        transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-o-keyframes cssload-width {
+    0%, 100% {
+        -o-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-ms-keyframes cssload-width {
+    0%, 100% {
+        -ms-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes cssload-width {
+    0%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-moz-keyframes cssload-width {
+    0%, 100% {
+        -moz-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+    }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
